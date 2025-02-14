@@ -1,0 +1,199 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(to bottom, #343a40, #212529);
+    color: white;
+}
+
+/* Profile Image Float Animation */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Hidden Sections */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Typewriter Effect */
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #ffc107;
+    animation: typing 3s steps(30, end), blink 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #ffc107; }
+}
+
+/* General Hidden and Visible Classes */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact and Footer Section */
+#contact-footer {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.card-img-top {
+    height: 200px; /* Tinggi gambar tetap */
+    object-fit: cover; /* Gambar crop sesuai ukuran */
+}
+
+/* Responsive Margin and Padding */
+#project .card {
+    border: none;
+    overflow: hidden;
+}
+
+#project .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#project .card-text {
+    font-size: 0.9rem;
+    color: #adb5bd;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 150px; /* Gambar lebih kecil di layar kecil */
+    }
+}
+
+/* Card styling tetap terlihat pada background dark */
+/* Card tinggi dan lebar seragam */
+.card {
+    height: 100%; /* Card penuh dalam kolom */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Isi card rata */
+}
+/* Card styling */
+.card {
+    background-color: #ffffff; /* Warna putih untuk kontras */
+    color: #212529; /* Warna teks */
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    overflow: hidden; /* Supaya konten tidak keluar */
+    border-radius: 10px; /* Sudut melengkung */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi */
+}
+
+/* Card body styling */
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Jarak antara judul dan teks */
+}
+/* Animasi hover pada card */
+.card:hover {
+    transform: scale(1.05); /* Zoom-in */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan */
+    z-index: 10; /* Card tampil di depan */
+}
+
+/* Menurunkan opacity card lain saat hover */
+.card:not(:hover) {
+    opacity: 0.7; /* Menurunkan visibilitas elemen lain */
+    transform: scale(1); /* Tetap pada ukuran aslinya */
+}
+/* Container untuk project menggunakan grid */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsif */
+    gap: 20px; /* Jarak antar card */
+    justify-content: center;
+    align-items: start; /* Pastikan card rata atas */
+}
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Background untuk project section */
+/* Section dengan background hitam */
+#project {
+    background-color: #212529; /* Background hitam */
+    color: white; /* Warna teks putih */
+    padding: 50px 20px; /* Padding untuk memberi ruang */
+}
+
+
+/* bagian ini untuk contact */
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memusatkan konten secara horizontal */
+    justify-content: center; /* Memusatkan konten secara vertikal */
+    text-align: center; /* Memusatkan teks */
+    margin-bottom: 5rem; /* mb-5 */
+}
+
+/* Styling untuk list */
+ul.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul.contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+ul.contact-list strong {
+    width: 100px; /* Lebar tetap untuk teks di sebelah kiri */
+    text-align: left;
+}
+ul.contact-list a {
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+ul.contact-list i {
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+    font-size: 18px;
+}
