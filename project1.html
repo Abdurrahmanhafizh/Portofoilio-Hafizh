@@ -74,20 +74,47 @@
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
-    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center py-4 px-4 sm:px-0 pointer-events-none">
-<div class="pointer-events-auto bg-white/70 dark:bg-background-dark/70 backdrop-blur-md border border-white/20 dark:border-white/5 rounded-full shadow-sm px-6 py-3 flex items-center justify-between gap-8 max-w-4xl w-full mx-auto transition-all">
-<a class="text-xl font-bold tracking-tight text-primary flex items-center gap-2" href="#">
-<span class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white text-sm font-bold">MAH</span>
-<span class="hidden sm:inline">Muhammad Abdurrahman Hafizh</span>
-</a>
-<ul class="hidden sm:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-<li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
-<!-- <li><a class="hover:text-primary transition-colors" href="#about">About</a></li> -->
-<li><a class="hover:text-primary transition-colors" href="project.html">Projects</a></li>
-<!-- <li><a class="hover:text-primary transition-colors" href="#skills">Skills</a></li> -->
-<li><a class="hover:text-primary transition-colors" href="#contact">Contact</a></li>
-</ul>
-</div>
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-center py-4 px-4 sm:px-0 pointer-events-none">
+  <div class="pointer-events-auto bg-white/70 dark:bg-background-dark/70 backdrop-blur-md border border-white/20 dark:border-white/5 rounded-full shadow-sm px-6 py-3 flex items-center justify-between gap-8 max-w-4xl w-full mx-auto transition-all relative">
+
+    <!-- LOGO -->
+    <a class="text-xl font-bold tracking-tight text-primary flex items-center gap-2" href="#">
+      <span class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white text-sm font-bold">MAH</span>
+      <span class="hidden sm:inline">Muhammad Abdurrahman Hafizh</span>
+    </a>
+
+    <!-- DESKTOP MENU -->
+    <ul class="hidden sm:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+      <li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+      <li><a class="hover:text-primary transition-colors" href="#about">About</a></li>
+      <li><a class="hover:text-primary transition-colors" href="project.html">Projects</a></li>
+      <li><a class="hover:text-primary transition-colors" href="#skills">Skills</a></li>
+      <li><a class="hover:text-primary transition-colors" href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- BURGER BUTTON -->
+    <button id="menuBtn" class="sm:hidden flex flex-col gap-1.5">
+      <span class="line w-6 h-0.5 bg-slate-700 dark:bg-white transition-all"></span>
+      <span class="line w-6 h-0.5 bg-slate-700 dark:bg-white transition-all"></span>
+      <span class="line w-6 h-0.5 bg-slate-700 dark:bg-white transition-all"></span>
+    </button>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu"
+      class="absolute top-full left-0 w-full mt-4 bg-white dark:bg-background-dark rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 
+      opacity-0 scale-95 pointer-events-none transition-all duration-300">
+
+      <ul class="flex flex-col text-center py-4 text-slate-700 dark:text-slate-200 font-medium">
+        <li><a href="index.html" class="block py-3 hover:text-primary">Home</a></li>
+        <!-- <li><a href="#about" class="block py-3 hover:text-primary">About</a></li> -->
+        <li><a href="project.html" class="block py-3 hover:text-primary">Projects</a></li>
+        <!-- <li><a href="#skills" class="block py-3 hover:text-primary">Skills</a></li> -->
+        <li><a href="#contact" class="block py-3 hover:text-primary">Contact</a></li>
+      </ul>
+
+    </div>
+
+  </div>
 </nav>
 <!-- Main Section Container -->
 <section class="max-w-7xl mx-auto px-6 lg:px-12 py-12 lg:pt-32 space-y-32">
@@ -261,4 +288,27 @@
 </section>
 <!-- Footer Accent -->
 </section>
-</body></html>
+</body>
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const lines = document.querySelectorAll(".line");
+
+menuBtn.addEventListener("click", () => {
+
+  mobileMenu.classList.toggle("opacity-0");
+  mobileMenu.classList.toggle("scale-95");
+  mobileMenu.classList.toggle("pointer-events-none");
+
+  // animasi burger → X
+  lines[0].classList.toggle("rotate-45");
+  lines[0].classList.toggle("translate-y-2");
+
+  lines[1].classList.toggle("opacity-0");
+
+  lines[2].classList.toggle("-rotate-45");
+  lines[2].classList.toggle("-translate-y-2");
+
+});
+</script>
+</html>
